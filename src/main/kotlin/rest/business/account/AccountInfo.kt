@@ -12,9 +12,15 @@ class AccountInfo {
 
     val counter = AtomicLong()
 
-    @GetMapping("/getHello")
-    fun account(@RequestParam(value = "name", defaultValue = "World") name: String) : String {
-        return "Welcome $name, your account balance is 0.00000000234234 ETH"
+    @GetMapping("/account")
+    fun account(@RequestParam(value = "accountId", defaultValue = "7") accountId: Long): Account? {
+        return AccountStore.getAccount(accountId)
     }
+
+    @GetMapping("/create")
+    fun create(@RequestParam(value = "accountId", defaultValue = "007") accountId: String) {
+        return AccountStore.putAccount(Account(counter.getAndIncrement(), accountId, 0L))
+    }
+
 
 }
