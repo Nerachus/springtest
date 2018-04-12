@@ -11,7 +11,12 @@ import org.springframework.web.bind.annotation.RestController
 class InitPayment {
 
     @GetMapping("/greeting")
-    fun greeting(@RequestParam(value = "name", defaultValue = "World") name: String): Greeting {
-        return Greeting(2, "Hello, Mr. $name")
+    fun greeting(
+            @RequestParam(value = "merchantID") merchantID: Long,
+            @RequestParam(value = "customerID") customerID: Long,
+            @RequestParam(value = "currency") currency: String,
+            @RequestParam(value = "amount") amount: String): Greeting {
+
+        return Greeting(2, "Customer $customerID is paying $amount $currency to the merchant $merchantID")
     }
 }

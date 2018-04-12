@@ -1,3 +1,3 @@
 package model.payment
 
-class Account(val id: String)
+data class Account(val uuid: Long, val currency: String, val amount: Long)
