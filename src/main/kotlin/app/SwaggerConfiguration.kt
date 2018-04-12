@@ -1,4 +1,4 @@
-package demo
+package app
 
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
@@ -14,6 +14,7 @@ class SwaggerConfiguration {
 
     @Bean
     fun api(): Docket = Docket(DocumentationType.SWAGGER_2)
+            .host("localhost:8080")
             .select()
             .apis(RequestHandlerSelectors.any())
             .paths(PathSelectors.any())

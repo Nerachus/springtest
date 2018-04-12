@@ -1,17 +1,20 @@
-package demo
+package app.business.account
 
 import org.springframework.web.bind.annotation.GetMapping
+import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RequestParam
 import org.springframework.web.bind.annotation.RestController
 import java.util.concurrent.atomic.AtomicLong
 
 @RestController
-class GreetingController {
+@RequestMapping("/account")
+class AccountInfo {
 
     val counter = AtomicLong()
 
-    @GetMapping("/greeting")
-    fun greeting(@RequestParam(value = "name", defaultValue = "World") name: String) =
-            Greeting(counter.incrementAndGet(), "Hello, Mr. $name")
+    @GetMapping("/getHello")
+    fun account(@RequestParam(value = "name", defaultValue = "World") name: String) =
+            "hello"
+
 
 }
