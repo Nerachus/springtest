@@ -10,8 +10,8 @@ class Test {
     fun test() {
         val mockAccount = mock(Account::class.java)
 
-        whenM(mockAccount.id).thenReturn("1")
+        whenM(mockAccount.uuid).thenReturn(1L)
 
-        assertThat(mockAccount.id).isEqualTo("1")
+        assertThat(mockAccount.uuid).isEqualTo(1L)
     }
 }
