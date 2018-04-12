@@ -1,3 +1,5 @@
 package model.payment
 
-data class Account(val uuid: Long, val currency: String, val amount: Long)
+import java.math.BigDecimal
+
+data class Account(val accountID : Long, val currency: String, var balance: BigDecimal)
