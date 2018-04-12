@@ -13,8 +13,8 @@ class AccountInfo {
     val counter = AtomicLong()
 
     @GetMapping("/getHello")
-    fun account(@RequestParam(value = "name", defaultValue = "World") name: String) =
-            "hello"
-
+    fun account(@RequestParam(value = "name", defaultValue = "World") name: String) : String {
+        return "Welcome $name, your account balance is 0.00000000234234 ETH"
+    }
 
 }
