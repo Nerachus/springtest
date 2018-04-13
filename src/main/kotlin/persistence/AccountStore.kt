@@ -4,13 +4,13 @@ import model.payment.Account
 
 object AccountStore {
 
-    val accounts: MutableMap<String, Account> = HashMap()
+    val accounts: MutableMap<Long, Account> = HashMap()
 
-    fun getAccount(accountId: String): Account? {
+    fun getAccount(accountId: Long): Account? {
         return accounts[accountId]
     }
 
     fun putAccount(account: Account) {
-        accounts.put(account.id, account)
+        accounts.put(account.uuid, account)
     }
 }
